@@ -43,6 +43,7 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	text-indent: 50px;
 	padding: 15px;
 	width: 100%;
 }
@@ -59,13 +60,14 @@
 
 
 
-ul#nav {Margin: 0 0 0 31%; position: absolute; right: 90px; top: 45px; font-family: manila; font-size: 28px;}
-ul.drop a { display:flex; color: #09579C; font-family: morningtype; font-size: 28px; text-decoration: none; padding: 3px; text-align: center;}
-ul.drop, ul.drop li, ul.drop ul { list-style: none; margin: 0; padding: 0; border: 1px solid #2c77f3; background: #2c77f3;}
+ul#nav {Margin: 0 0 0 31%; position: absolute; left: 450px; top: 45px; font-family: manila; font-size: 28px;}
+ul.drop a { display:block; color: #0b4bb7; font-family: morningtype; font-size: 28px; text-decoration: none; padding: 3px; text-align: center;}
+ul.drop{ list-style: none; margin: 0; padding: 0; background: #2c77f3;}
+ul.drop li, ul.drop ul { list-style: none; margin: 0; padding: 0; background: #2c77f3;}
 ul.drop { position: relative; z-index: 597; float: left; }
 ul.drop li { float: left; line-height: 1.3em; vertical-align: middle; zoom: 1; padding: 5px 10px; }
-ul.drop li.hover, ul.drop li:hover { position: relative; z-index: 599; cursor: hand; background: #40B0FF;  color: #B3F5F0;}
-ul.drop ul { visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 598; width: 195px; background: #2c77f3; border: 1px solid #2c77f3; }
+ul.drop li.hover, ul.drop li:hover { position: relative; z-index: 599; cursor: hand; background: #093e95;  color: white;}
+ul.drop ul { visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 598; width: 200px; background: #2c77f3;}
 ul.drop ul li { float: none; }
 ul.drop ul ul { top: -2px; left: 100%; }
 ul.drop li:hover > ul { visibility: visible ;}
