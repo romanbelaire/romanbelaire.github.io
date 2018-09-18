@@ -38,6 +38,14 @@
 	font-family: impact;
 	src: url(fonts/MaximumImpact.ttf);
 }
+
+
+body {
+   margin: 0px;
+   min-height: 100%;
+   width: 100%;
+}
+
 .bod
 {
 	/*background-color: #5593f6;*/
@@ -60,6 +68,17 @@
 	width: 100%;
 	z-index: 10;
 }
+.cover
+{
+	/*cover photo*/
+	position: fixed;
+	max-width: 100%;
+	min-width: 100%;
+	min-height: 800px;
+	top:-400px;
+	
+	
+}
 
 .title
 {
@@ -73,7 +92,7 @@
 	padding: 15px;
 	text-indent: 50px;
 	width: 100%;
-	z-index: 1;
+	z-index: 5;
 }
 
 .p1
@@ -89,12 +108,32 @@
 	background: white;
 	
 }
+.p2
+{
+	position: relative;
+	font-family: manila;
+	color: black;
+	width: 1200px;
+	top: 50px;
+	margin: auto;
+	font-size: 24px;
+	z-index: 3;
+	background: white;
+}
+
+.homeBody
+{
+	position: relative;
+	top: 300px;
+	width:100%;
+	height: 100%;
+	z-index: 2;
+}
 .bodycover
 {
-	position:relative;
-	top: 200px;
-	left:-50px;
-	width:110%;
+	position:absolute;
+	top: 300px;
+	width:100%;
 	height: 100%;
 	z-index: 2;
 	background: white;
@@ -139,5 +178,12 @@ ul.drop li:hover > ul { visibility: visible ;}
 	border-radius: 50%;
 	max-width: 500px;
 	max-height: auto;
+}
+.ufogame
+{
+	position: relative;
+	border: none;
+	margin: auto;
+	max-width: auto;
 }
 
