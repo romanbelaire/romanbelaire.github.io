@@ -38,7 +38,26 @@
 	font-family: impact;
 	src: url(fonts/MaximumImpact.ttf);
 }
-
+@font-face
+{
+	font-family: manila-bold;
+	src: url(fonts/ManilaSansBld.otf);
+}
+@font-face
+{
+	font-family: evolve-med;
+	src: url(fonts/evomid.otf);
+}
+@font-face
+{
+	font-family: evolve-bld;
+	src: url(fonts/evobld.otf);
+}
+@font-face
+{
+	font-family: identica;
+	src: url(fonts/identica.ttf);
+}
 
 body {
    margin: 0px;
@@ -139,7 +158,26 @@ body {
 	background: white;
 	margin: auto;
 }
-
+.quote
+{
+	position: relative;
+	top: 300px;
+	width: 1500px;
+	margin: auto;
+	font-family: identica;
+	font-size: 60px;
+	
+}
+.subquote
+{
+	position:relative;
+	top: 10px;
+	width: 500px;
+	margin: auto;
+	left: 100px;
+	font-family: identica;
+	font-size: 48px;
+}
 
 
 
