@@ -104,7 +104,7 @@
 
 
 
-ul#nav {Margin: 0 0 0 31%; position: fixed; left: 400px; top: 60px; font-family: manila; font-size: 28px;}
+ul#nav {position: fixed; right: 200px; top: 60px; font-family: manila; font-size: 28px;}
 ul.drop a { display:block; color: white; font-family: manila; font-size: 28px; text-decoration: none; text-align: center;}
 ul.drop{ list-style: none; margin: 0; padding: 0; background: #2c77f3;}
 ul.drop li, ul.drop ul { list-style: none; margin: 0; padding: 0; background: #2c77f3;}
@@ -132,3 +132,12 @@ ul.drop li:hover > ul { visibility: visible ;}
 100%{top: 100px;}
 }
 */
+.profile
+{
+	float: left;
+	margin-right: 15px;
+	border-radius: 50%;
+	max-width: 500px;
+	max-height: auto;
+}
+
