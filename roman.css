@@ -133,8 +133,8 @@ body {
 	position: relative;
 	font-family: manila;
 	color: black;
-	width: 1200px;
-	top: 50px;
+	max-width: 1200px;
+	top: 20px;
 	margin: auto;
 	font-size: 24px;
 	z-index: 3;

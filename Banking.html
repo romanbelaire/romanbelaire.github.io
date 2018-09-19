@@ -56,7 +56,7 @@ OneHot encoding was the way to go. This created one new column for each unique c
 <div class = "p1">
 <div class = "codeback">
 <pre>
-	<code class = "language-python" contenteditable spellcheck = "false">
+	<code class = "language-python" contenteditable spellcheck = "false" style = "font-size: 18px;">
 	#encoding categorical data
 	from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 	labelencoder_X_1 = LabelEncoder() #for countries
@@ -71,6 +71,43 @@ OneHot encoding was the way to go. This created one new column for each unique c
 	</code>
 </pre>
 </div></div>
+<div class = "p1">
+Once the data was ready to go, it was time to build the neural network model. Using the Keras Sequential model, I added the following layers: 
+<div class = "p2">
+<ul><li>Input layer, with 12 dimensions</li><li>Hidden layer, which will allow the network more opportunity for optimization</li><li>Output layer, with 1 output dimension (our answer)</li></ul>
+</div>
 
+</div>
+
+<div class = "p1">
+<pre>
+	<code class = "language-python" contenteditable spellcheck = "false" style = "font-size: 18px;">
+	classifier = Sequential() #initialize
+	#input layer
+	classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu', input_dim = 12))
+	#hidden layer
+	classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu'))
+	#output layer
+	classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid'))
+	</code>
+</pre>
+</div>
+<div class = "p1">
+After that, it was time to compile and fit this model to the data! The tutorial I was following compiled it with batch size 5 over 60 epochs, and I found I was able to get a *slightly* more 
+accurate model by using a batch size of 7 over 50 epochs. My accuracy for this model was 86.7%.
+</div>
+<div class = "p1">
+<pre>
+	<code class = "language-python" contenteditable spellcheck = "false" style = "font-size: 18px;">
+	#Compile it
+	classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
+
+	#fit ANN to the training set
+	classifier.fit(X_train, y_train, batch_size = 7, epochs = 50)
+	</code>
+</pre>
+</div>
+
+</div>
 </body>
 </html>
