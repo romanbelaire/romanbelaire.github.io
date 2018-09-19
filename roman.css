@@ -125,6 +125,7 @@ body {
 	font-size: 24px;
 	z-index: 3;
 	background: white;
+	margin-bottom: 50px;
 	
 }
 .p2
@@ -178,7 +179,14 @@ body {
 	font-family: identica;
 	font-size: 48px;
 }
-
+.codeback
+{
+	/*background-color : #475366;*/
+	max-width: 90%;
+	height: auto;
+	margin: auto;
+	font-size: 18px;
+}
 
 
 ul#nav {position: fixed; right: 200px; top: 60px; font-family: manila; font-size: 28px;}
