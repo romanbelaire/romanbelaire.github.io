@@ -46,7 +46,7 @@ test
 This project was my first attempt at building a neural network model without the help of a tutorial or a book. The goal of this model was to predict the price of housing in an area based off of qualities such as 
 ocean proximity, rooms in the house, and 7 other features. All of the features happened to be relevant in this dataset, so I didn't have to exclude any.
 </div>
-<div class = "p1"><img src = "HousingData.png" style = "max-width: 1200px; height: auto; margin: auto"></div>
+<div class = "p1"><img src = "HousingData.png" style = "max-width: 100%; height: auto; margin: auto"></div>
 <div class = "p1">
 However, the "total_bedrooms" feature had quite a few holes in it, which I noticed after some errors were thrown. This was the largest issue I had with the project. For a couple days I couldn't figure it out, 
 until I realized that there were entries missing in the data. I was finally able to fix this thanks to the handy pandas.dataframe's .median() and .fillna() methods, 
