@@ -46,7 +46,7 @@ test
 This project was my first attempt at building a neural network model without the help of a tutorial or a book. The goal of this model was to predict the price of housing in an area based off of qualities such as 
 ocean proximity, rooms in the house, and 7 other features. All of the features happened to be relevant in this dataset, so I didn't have to exclude any.
 </div>
-<div class = "p1"><img src = "HousingData.png" style = "max-width: 100%; height: auto; margin: auto"></div>
+<div class = "p1"><img src = "HousingData.png" style = "width: 100%; height: auto; margin: auto"></div>
 <div class = "p1">
 However, the "total_bedrooms" feature had quite a few holes in it, which I noticed after some errors were thrown. This was the largest issue I had with the project. For a couple days I couldn't figure it out, 
 until I realized that there were entries missing in the data. I was finally able to fix this thanks to the handy pandas.dataframe's .median() and .fillna() methods, 
@@ -121,7 +121,18 @@ used the pandas.DataFrame.describe function to find that the mean variance was 0
 	</code>
 </pre>
 </div>
-<div class = "p1"><img src = "HousingMedian.png" style = "max-width: 1200px; height: auto;"></div>
+<div class = "p1"><img src = "HousingMedian.png" style = "max-width: 100%; min-width: 50%; height: auto; margin-left: 25%;"></div>
+<div class = "p1">
+As you can see in this graph, most of the variances are clustered under a fairly normal distribution, which is both good and expected. It's not exactly <i>ideal</i>, as the goal of machine learning is to be 
+inhumanly accurate, but it leaves me fairly confident in my ability, given I finished this project with little to no direction. It's only upwards from here!
+</div>
+
+
+<div class = "p1">
+	<div class = "footer">
+	Roman Belaire 2018
+	</div>
+</div>
 </div>
 </body>
 </html>
