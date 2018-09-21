@@ -47,8 +47,8 @@
 This short game is the product of my first venture into developing with Unity. The assets are from the unity store, as a part of the "2D UFO" tutorial I loosely followed. 
 The hardest part about picking up this engine for me was learning the environment, which the tutorial helped me acclimate to in a matter of minutes. While most of the code in the 
 tutorial was relatively simple, I tried my best to add to the game where I could so that the final product was more than just a tutorial project.
-
-<div class = "p2">
+</div>
+<div class = "p1">
 &nbsp &nbsp &nbsp &nbsp The first feature I added in was the "floating" effect that the golden nugget pickup items display. The tutorial included changing the rotation property, but I thought it would be neat to have 
 them appear to float up and down off of the play surface. I achieved this by passing the game tick time through a sine function and adding that to the current scale of the objects, which I think 
 turned out nicely. I also added in the infinitely respawning nuggets once the previous ones are picked up. I don't know if this was a part of the tutorial or not, but I wanted to practice with dynamically created 
@@ -56,12 +56,19 @@ objects in unity. I was already fairly comfortable in the environment and had cl
 the most difficult (or at least dragged out) part of this project, although I eventually completed it through trial and error. Most of the mistakes here were caused by my lack of knowledge on how the scene 
 elements interacted and poor C# knowledge. 
 </div>
-<div class = "p2">
+<div class = "p1">
 &nbsp &nbsp &nbsp &nbsp At this point, I felt like I had achieved everything the tutorial had set out to achieve and had more confidence in using Unity, so I was basically done. However, there was one more 
 feature that I had to include. As you can tell by the rest of this portfolio, I am deeply interested in artificial intelligence of all sorts. I can't make a game without including some kind of automatic 
 decision-making, so I implemented a short algorithm that selected the nugget nearest to the player object and moved the player towards it. Since the unity objects are moved by adding force instead of adjusting 
 position, I had to take the difference between their coordinates and pass that value through a sigmoid function to add to the force vector. This way, the accelleration was limited to mimic keyboard input, rather than 
 the player rocketing off to the other side of the play area at ridiculous speeds. Over all, I think the project covered all bases I was previously clueless on, and hopefully I can make my long-envisioned pirate game soon.
+</div>
+
+
+<div class = "p1">
+	<div class = "footer">
+	Roman Belaire 2018
+	</div>
 </div>
 </div>
 </div>
