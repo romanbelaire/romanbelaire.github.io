@@ -73,6 +73,15 @@ body {
 	z-index: 3;
 }
 
+.header
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 11;
+}
+
+
 .head
 {
 	background-color: #2c77f3;
