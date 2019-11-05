@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Plant</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="#" class="title">Independent Project: Plant</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">AI and Home Gardening</h1>
+							<span class="image header"><img src="images/plantHeader.jpg" alt="" /></span>
+							<p>As someone who loves to cook, having a home garden in which I could grow herbs, fruits and vegetables would be a dream. In fact, I actually one in a dream. The problem is, like many people, I lack the time, skill and knowledge to successfully grow one, and the time to build said skill and knowledge. Fortunately for me, I have the engineering skills (or more importantly, interest) to tackle this problem. Moreover, I have the opportunity to apply a research interest of mine, reinforcement learning, to a project that will yield tangible and (hopefully) delicious results! The following article will chronicle my first attempt at building a full hardware system from basic components, develop and deploy a machine learning model beyond research or proof-of-concept, and --the most intimidating of the three-- document all of it online.</p>
+							<p>The idea first came to me when a student of mine was asking for a cool and original project idea for his high school’s science fair. I jokingly said “How about a robot that grows fruits for you?” and we both laughed, but I later returned to the idea thinking maybe it wasn’t such a silly idea. Throughout the course of a few months, I worked out the high-level details of how such a project could be built, and one summer internship later, I sat down with a list of parts and a book on reinforcement learning, ready to begin.</p>
+							<h2>Designing the Experiment</h2>
+							<p>The project first takes shape in the form of an experiment: can I grow plants in a controlled manner, and precisely measure the factors contributing to their development? Obviously, growing plants in soil in my backyard would have too many variables to count, much less record, so I turned to hydroponics as my farm platform of choice. This allows me to precisely regulate the water, food, and light levels reaching the plants, which is ideal for collecting data and building models. I chose an ebb-and-flow setup for the reason that it allows more control over watering than some other hydroponic systems, while being easy enough for a beginner to build, maintain, and understand.</p>
+
+							<p>The most interesting learning experience so far in this project was the process of designing the experiment. I had participated in lab research in undergrad and was able to help design experiments, and had read quite a few research papers, so I wasn’t a complete newbie to this. However, this project differed in that I had no suggested direction on how to proceed, so I was both asking questions and attempting to answer them. What surprised me most about this was the number of considerations I had to make in regard to experimental variables and how I should determine which ones to control and which ones to measure. Additionally, coming up with the system design was a creative challenge with more depth than I had first anticipated. In both cases, my original design iterations were quickly changed when considering the quality and amount of data they would yield (my first design for the plant trough only had one trough, which would have taken forever to gather data with). Thankfully, these challenges were more of a fun surprise than a complete roadblock.
+							</p>
+							<p>The design I came up with uses a small 12V DC water pump to fill the plant troughs, which are sections of 4” PVC pipes with the tops cut off and ends capped. Water flows down the overflow drain or back through the pump during the off cycle, back into the reservoir below. The pumps are switched on and off using a raspberry pi and a relay switch. This design was repeated four times for a total of four different points for me to gather data. </p>
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
