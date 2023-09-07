@@ -2638,6 +2638,14 @@ input, select, textarea {
 				width: 100%;
 			}
 
+			.image.cover {
+				display: block;
+				margin: 0 0 0 0;
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+
 /* List */
 
 	ol {
