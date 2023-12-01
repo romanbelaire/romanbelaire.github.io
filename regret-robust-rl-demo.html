@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Regret-Based Robust RL</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="#" class="title">Regret-Based Robust Adversarial Reinforcement Learning</a>
+				<nav>
+					<ul>
+						<li><a href="#">Github</a></li>
+						<li><a href="https://arxiv.org/abs/2302.06912">Paper</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+              <b>Abstract:</b> Deep Reinforcement Learning (DRL) policies have been shown to be vulnerable to small adversarial noise in observations. Such adversarial noise can have disastrous consequences in safety-critical environments. For instance, a self-driving car receiving adversarially perturbed sensory observations about nearby signs (e.g., a stop sign physically altered to be perceived as a speed limit sign) or objects (e.g., cars altered to be recognized as trees) can be fatal. Existing approaches for making RL algorithms robust to an observation-perturbing adversary have focused on reactive approaches that iteratively improve against adversarial examples generated at each iteration. While such approaches have been shown to provide improvements over regular RL methods, they are reactive and can fare significantly worse if certain categories of adversarial examples are not generated during training. To that end, we pursue a more proactive approach that relies on directly optimizing a well-studied robustness measure, regret instead of expected value. We provide a principled approach that minimizes maximum regret over a "neighborhood" of observations to the received "observation". Our regret criterion can be used to modify existing value- and policy-based Deep RL methods. We demonstrate that our approaches provide a significant improvement in performance across a wide variety of benchmarks against leading approaches for robust Deep RL.
+							</div>
+					</section>
+
+			</div>
+
+      <section id="intro" class="wrapper style1 fullscreen fade-up">
+        <div class="inner">
+          <center>
+          <table>
+            <tr>
+              <th>Vanilla PPO</th>
+              <th>Trial Description</th>
+              <th>RAD-PPO</th>
+            </tr>
+            <tr>
+              <td><img src="regret-images/vanilla_ppo_cheetah.gif" alt="" width=300px></td>
+              <td>Unperturbed run: we can observe the tangible difference between the vanilla and robust policy. The vanilla policy maintains a high speed by "scooting" along its rear leg, keeping the front leg off the ground. The robust policy opts for a more stable approach akin to a gallop. The vanilla policy scores 30% higher in this trial. </td>
+              <td><img src="regret-images/soft_ccer_cheetah.gif" alt="" width=300px></td>
+            </tr>
+            <tr>
+              <td><img src="regret-images/vanilla_ppo_cheetah_atk.gif" alt="" width=300px></td>
+              <td>Perturbed run: Here, we see the consequences of each strategy. The vanilla policy is unstable and repeatedly "faceplants", even flipping over in the third episode. The robust policy manages to keep its form, with only slight stuttering. The robust policy scores 100% higher than the vanilla policy, except for the third episode in which the vanilla policy scores 0. </td>
+              <td><img src="regret-images/soft_ccer_cheetah_critic.gif" alt="" width=300px></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </section>
+
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy All rights reserved. Please cite any useage of our work or images :) </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
