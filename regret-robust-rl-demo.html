@@ -36,9 +36,13 @@
 					</section>
 
 			</div>
-
       <section id="intro" class="wrapper style1 fullscreen fade-up">
-        <div class="inner">
+        <div class="inner" style="margin:0 auto">
+          <h2>Finding Regret-Minimizing Policies for Adversarially Robust RL:</h2>
+          <p style="color:white">In our investigation, we present innovative methodologies for computing Reinforcement Learning (RL) policies designed to exhibit resilience in the face of perturbations to their behavioral dynamics. Diverging from traditional paradigms that prioritize the maximization of rewards, our approach centers on the minimization of regret within the enacted policies.
+<br> &nbsp&nbsp&nbsp&nbsp Conventional state-of-the-art techniques typically gravitate towards either the maximization of a robust, guaranteed minimum reward or the fortification of a classifier/neural network to mitigate errors. However, both methodologies employ the optimization of reward signals. Within the framework of game theory, our proposed methodology can be aptly classified as "mini-max regret," diverging fundamentally from the prevalent "maxi-min reward" strategies employed by existing approaches. <br>
+&nbsp&nbsp&nbsp&nbsp
+Policies grounded in regret-based optimization yield outcomes characterized by enhanced security and consistency, a phenomenon elucidated through a visual representation provided below.</p>
           <center>
           <table>
             <tr>
@@ -47,20 +51,52 @@
               <th>RAD-PPO</th>
             </tr>
             <tr>
-              <td><img src="regret-images/vanilla_ppo_cheetah.gif" alt="" width=300px></td>
-              <td>Unperturbed run: we can observe the tangible difference between the vanilla and robust policy. The vanilla policy maintains a high speed by "scooting" along its rear leg, keeping the front leg off the ground. The robust policy opts for a more stable approach akin to a gallop. The vanilla policy scores 30% higher in this trial. </td>
-              <td><img src="regret-images/soft_ccer_cheetah.gif" alt="" width=300px></td>
+              <th></th>
+              <th>Mujoco: HalfCheetah</th>
             </tr>
             <tr>
-              <td><img src="regret-images/vanilla_ppo_cheetah_atk.gif" alt="" width=300px></td>
-              <td>Perturbed run: Here, we see the consequences of each strategy. The vanilla policy is unstable and repeatedly "faceplants", even flipping over in the third episode. The robust policy manages to keep its form, with only slight stuttering. The robust policy scores 100% higher than the vanilla policy, except for the third episode in which the vanilla policy scores 0. </td>
-              <td><img src="regret-images/soft_ccer_cheetah_critic.gif" alt="" width=300px></td>
+              <td><img src="regret-images/vanilla_ppo_cheetah.gif" alt="" width=300px style="vertical-align:top"></td>
+              <td>Unperturbed Test: The tangible difference between the conventional (vanilla) and robust policies is readily apparent in this task. The vanilla policy sustains higher velocity through a distinctive locomotion pattern, leveraging its rear leg to "scoot" forwards while elevating the front leg. Conversely, the robust policy adopts a more measured and stable gallop-like strategy with both legs contacting the floor. In this trial, the vanilla policy achieves a 30% further distance than the robust agent.
+ </td>
+              <td><img src="regret-images/soft_ccer_cheetah.gif" alt="" width=300px style="vertical-align:top"></td>
+            </tr>
+            <tr>
+              <td><img src="regret-images/vanilla_ppo_cheetah_atk.gif" alt="" width=300px style="vertical-align:top"></td>
+              <td>Perturbed Test: Here, we see the consequences of each strategy. The vanilla policy is unstable and repeatedly "faceplants", even flipping over in the third episode. The robust policy manages to maintain its stable gait, with only slight stuttering. The robust policy scores double that of the vanilla policy on average, even when excluding immediate failures by the vanilla policy. </td>
+              <td><img src="regret-images/soft_ccer_cheetah_critic.gif" alt="" width=300px style="vertical-align:top"></td>
+            </tr>
+            <tr>
+              <th></th>
+              <th>Mujoco: Walker2D</th>
+            </tr>
+            <tr>
+              <td><img src="regret-images/vanilla_ppo_walker.gif" alt="" width=300px style="vertical-align:top"></td>
+              <td>Unperturbed Test: Again, we can observe a distinctly different strategy between the two approaches. The value-optimizing agent uses both feet to contact the ground and leap forwards, while the regret-minimizing agent uses one leg as a counter balance. The robust strategy has a slower start, but appears to eventually match the top speed, scoring around the same on average. </td>
+              <td><img src="regret-images/soft_ccer_walker.gif" alt="" width=300px style="vertical-align:top"></td>
+            </tr>
+            <tr>
+              <td><img src="regret-images/vanilla_ppo_walker_atk.gif" alt="" width=300px style="vertical-align:top"></td>
+              <td>Perturbed Test: Once again we see that the instability of the vanilla agent's strategy leads to over-correction when perturbations occur. While difficult to notice at a glance, the vanilla policy "kicks" more widely to recover as it becomes more unstable. </td>
+              <td><img src="regret-images/soft_ccer_walker_critic.gif" alt="" width=300px style="vertical-align:top"></td>
+            </tr>
+            <tr>
+              <th></th>
+              <th>Mujoco: Hopper</th>
+            </tr>
+            <tr>
+              <td><img src="regret-images/vanilla_ppo_hopper.gif" alt="" width=300px style="vertical-align:top"></td>
+              <td>Unperturbed Test: Differences between strategies in this task are the hardest to distinguish visually, though when comparing the forward tilt of each agent's body one will notice the vanilla agent leaning more to generate more horizontal momentum. Overall, the vanilla policy scores slightly higher.</td>
+              <td><img src="regret-images/soft_ccer_hopper.gif" alt="" width=300px style="vertical-align:top"></td>
+            </tr>
+            <tr>
+              <td><img src="regret-images/vanilla_ppo_hopper_atk.gif" alt="" width=300px style="vertical-align:top"></td>
+              <td>Perturbed Test: Even though the two strategies are largely similar, adversarial perturbations exacerbate the slight difference in stability: the difference in forward tilt is even more noticeable, culminating in an early failure for the nonrobust agent.</td>
+              <td><img src="regret-images/soft_ccer_hopper_critic.gif" alt="" width=300px style="vertical-align:top"></td>
             </tr>
           </table>
           </center>
         </div>
       </section>
-
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">
