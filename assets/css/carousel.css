@@ -1,0 +1,193 @@
+/* Photo Carousel — rotating "page flip" gallery */
+
+.photo-carousel {
+	max-width: 720px;
+	margin: 2em auto 0 auto;
+}
+
+	.photo-carousel:focus {
+		outline: none;
+	}
+
+	.photo-carousel:focus-visible {
+		outline: 3px solid rgba(102, 78, 76, 0.6);
+		outline-offset: 6px;
+		border-radius: 0.35em;
+	}
+
+	.photo-carousel__viewport {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		perspective: 1600px;
+		border-radius: 0.35em;
+		overflow: hidden;
+		box-shadow: 0 1.5em 3em rgba(0, 0, 0, 0.3);
+		background: #132B3B;
+		touch-action: pan-y;
+	}
+
+	.photo-carousel__stage {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transform-style: preserve-3d;
+	}
+
+	.photo-carousel__slide {
+		position: absolute;
+		inset: 0;
+		margin: 0;
+		transform-style: preserve-3d;
+		backface-visibility: hidden;
+		transition: transform 0.85s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.6s ease;
+		will-change: transform, opacity;
+	}
+
+		.photo-carousel__slide img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+			display: block;
+		}
+
+		.photo-carousel__slide figcaption {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 1.6em 1.7em 1.2em 1.7em;
+			background: linear-gradient(to top, rgba(19, 43, 59, 0.88) 0%, rgba(19, 43, 59, 0.5) 60%, rgba(19, 43, 59, 0) 100%);
+			color: #ffffff;
+			display: flex;
+			flex-direction: column;
+			gap: 0.3em;
+		}
+
+		.photo-carousel__slide .pc-desc {
+			font-family: Spectral, serif;
+			font-size: 1.05em;
+			line-height: 1.4;
+		}
+
+		.photo-carousel__slide .pc-loc {
+			font-size: 0.75em;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: #99CAD4;
+		}
+
+	/* Slide states drive the 3D page-flip transitions */
+	.photo-carousel__slide[data-state="active"] {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translateX(0) translateZ(0) rotateY(0deg);
+		z-index: 3;
+	}
+
+	.photo-carousel__slide[data-state="prev"] {
+		opacity: 0;
+		pointer-events: none;
+		transform: translateX(-38%) translateZ(-260px) rotateY(48deg);
+		z-index: 1;
+	}
+
+	.photo-carousel__slide[data-state="next"] {
+		opacity: 0;
+		pointer-events: none;
+		transform: translateX(38%) translateZ(-260px) rotateY(-48deg);
+		z-index: 1;
+	}
+
+	.photo-carousel__slide[data-state="hidden"] {
+		opacity: 0;
+		pointer-events: none;
+		transform: translateX(0) translateZ(-420px) rotateY(0deg);
+		z-index: 0;
+	}
+
+	.photo-carousel__arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 2.6em;
+		height: 2.6em;
+		border-radius: 50%;
+		border: 0;
+		background: rgba(19, 43, 59, 0.45);
+		color: #ffffff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: background 0.25s ease, transform 0.25s ease;
+		z-index: 4;
+	}
+
+		.photo-carousel__arrow svg {
+			width: 1.1em;
+			height: 1.1em;
+		}
+
+		.photo-carousel__arrow:hover,
+		.photo-carousel__arrow:focus-visible {
+			background: #664E4C;
+		}
+
+		.photo-carousel__arrow:active {
+			transform: translateY(-50%) scale(0.92);
+		}
+
+	.photo-carousel__arrow--prev {
+		left: 0.75em;
+	}
+
+	.photo-carousel__arrow--next {
+		right: 0.75em;
+	}
+
+	.photo-carousel__dots {
+		display: flex;
+		justify-content: center;
+		gap: 0.6em;
+		margin-top: 1.1em;
+	}
+
+	.photo-carousel__dot {
+		width: 0.6em;
+		height: 0.6em;
+		border-radius: 50%;
+		border: 0;
+		padding: 0;
+		background: rgba(255, 255, 255, 0.35);
+		cursor: pointer;
+		transition: background 0.25s ease, transform 0.25s ease;
+	}
+
+		.photo-carousel__dot:hover {
+			background: rgba(255, 255, 255, 0.6);
+		}
+
+		.photo-carousel__dot.is-active {
+			background: #664E4C;
+			transform: scale(1.25);
+		}
+
+@media screen and (max-width: 736px) {
+	.photo-carousel__slide[data-state="prev"],
+	.photo-carousel__slide[data-state="next"] {
+		transform: translateX(0) translateZ(-260px) rotateY(0deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.photo-carousel__slide {
+		transition: opacity 0.4s ease;
+	}
+
+	.photo-carousel__slide[data-state="prev"],
+	.photo-carousel__slide[data-state="next"] {
+		transform: none;
+	}
+}
